@@ -1,0 +1,173 @@
+@import url('https://fonts.googleapis.com/css2?family=Lemonada:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    cursor: none;
+}
+::selection{
+    color: var(--secondary-color);
+    background-color: var(--primary-color);
+}
+
+body{
+    background-color: var(--secondary-color);
+    font-family: 'Lemonada', cursive;
+    color: var(--primary-color);
+    cursor: none;
+}
+:root{
+    --primary-color:#990011ff;
+    --secondary-color : #fcf6f5ff;
+    --third-color:#e3afbc;
+    --fourth-color:#ee4c7d;
+    --fifth-color:#123d6a;
+    --sixth-color:#ede2dc;  
+    --seventh-color:#25274d;
+    --eight-color:#2e1114;
+
+
+}
+.cursor_div {
+	position: absolute;
+	background-color: rgba(255,255,255,0.8);
+	border-top: 3px solid var(--seventh-color);
+	border-left: 3px solid var(--seventh-color);
+	border-bottom: 3px solid var(--primary-color);
+	border-right: 3px solid var(--primary-color);
+	border-radius: 50%;
+	width: 2.5em;
+	height: 2.5em;
+	left: 6em;
+    mix-blend-mode: difference;
+    transform: translate(-50% , -50%);
+    z-index: 100000;
+    pointer-events: none;
+    transition: background-color .3s ease-in-out , transform .3s ease-in-out;
+    transform-origin: 100% 100%;
+ 
+}
+.cursor_hover{
+    transform: scale(2);
+    // background-color:rgba(0,0,0,0.3);
+    mix-blend-mode:difference;
+    // filter: hue-rotate(90deg);
+    // background: linear-gradient(45deg, red,blue);
+    // filter: opacity(0.5);
+}
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--secondary-color);
+    /* background-image: linear-gradient(0deg, rgb(56, 2, 2) 0% 1%,#990011ff 10% 100% ); */
+}
+.heading{
+    font-family: 'Lobster', cursive;
+    font-size: 2em;
+    letter-spacing: 2px;
+    margin-right: auto;
+    margin-left: 1em;
+    display: inline-block;
+    color: var(--primary-color);
+}
+nav ul{
+    
+    display: flex;
+    justify-content: space-evenly;
+    
+}
+nav ul li{
+    list-style: none;
+    padding: .5em 1em;
+    margin-right: 3em;
+    
+}
+li > a{
+    text-decoration: none;
+    color:var(--primary-color)
+}
+strong , b {
+    color: var(--seventh-color);
+    // background-color:var(--sixth-color);
+    font-size: 1.2rem;
+}
+.title{
+    text-align: center;
+    margin: 10% auto;
+    position: relative;
+
+    &>h1{
+        font-size: clamp(1.5rem,4vw,4rem);
+    }
+    & a{
+        color: var(--primary-color);
+        text-decoration: none;
+        padding:.3em 1em;
+        font-size: clamp(1.2rem,2vw,3rem);
+        position: relative;
+        border: 2px solid var(--primary-color);
+        font-weight: 600;
+    }
+
+
+}
+.anchor:hover{
+    color: var(--sixth-color);
+}
+.anchor::after{
+    content: ' ';
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    height: 0%;
+    background-color:var(--primary-color);
+    transition: height .2s cubic-bezier(0.19, 1, 0.22, 1);
+}
+.anchor:hover::after{
+    height: 100%;
+    z-index: -1;
+    color: var(--sixth-color);
+}
+.content_part{
+    display: grid;
+    grid-template-columns: 1fr;
+}
+.img_div{
+    background: url('/agnes-elena-craciun-WSba15XTvVs-unsplash.jpg') no-repeat;
+    width: 100%;
+    height: 700px;
+    background-size: cover;
+    
+}
+.img_div>img{
+    width: 100%;
+}
+.intro_div{
+    position: relative;
+}
+.my_intro {
+	padding: 1em 2em;
+	box-shadow: 2px 2px 0px var(--primary-color) ,-3px -3px 0px;
+	margin: 2em;
+	border-radius: 0% 11% 0% 11%;
+    line-height: 1.6;
+    word-spacing: 2px;
+    
+}
+.profile_pic {
+	position: absolute;
+	width: 8em;
+	border-radius: 50%;
+	border: 1px solid white;
+	box-shadow: 0px 0px 0px 3px var(--primary-color) , 3px 3px 10px rgba(0,0,0,0.3),-3px -3px 10px rgba(0,0,0,0.3);
+	top: 5.5em;
+	left: 4em;
+}
+p > span{
+    font-size: 14px;
+    display: block;
+    text-align: end;
+}
